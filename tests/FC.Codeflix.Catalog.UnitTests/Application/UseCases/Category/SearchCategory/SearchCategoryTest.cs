@@ -1,6 +1,6 @@
 ﻿using DomainEntity = FC.Codeflix.Catalog.Domain.Entity;
 using FC.Codeflix.Catalog.Domain.Repositories.DTOs;
-using Moq;
+using NSubstitute;
 using UseCase = FC.Codeflix.Catalog.Application.UseCases.Category.SearchCategory;
 using FluentAssertions;
 
@@ -19,7 +19,7 @@ public class SearchCategoryTest
     [Trait("Application", "[UseCase] SearchCategory")]
     public async Task ReturnsSearchResult()
     {
-        var respository = _fixture.GetMockRepository();
+        var repository = _fixture.GetMockRepository();
         var categories = _fixture.GetCategoryList();
         var input = _fixture.GetSearchInput();
         var expectedQueryResult = new SearchOutput<DomainEntity.Category>(
@@ -27,12 +27,12 @@ public class SearchCategoryTest
             input.PerPage,
             input.PerPage,
             categories);
-        respository.Setup(x => x.SearchAsync(
-            It.IsAny<SearchInput>(),
-            It.IsAny<CancellationToken>())
-            ).ReturnsAsync(expectedQueryResult);
+        repository.SearchAsync(
+            Arg.Any<SearchInput>(),
+            Arg.Any<CancellationToken>()
+        ).Returns(Task.FromResult(expectedQueryResult));
 
-        var useCase = new UseCase.SearchCategory(respository.Object);
+        var useCase = new UseCase.SearchCategory(repository);
 
         var output = await useCase.Handle(input, CancellationToken.None);
 
@@ -41,15 +41,13 @@ public class SearchCategoryTest
         output.PerPage.Should().Be(input.PerPage);
         output.Total.Should().Be(expectedQueryResult.Total);
         output.Items.Should().BeEquivalentTo(categories);
-        respository.Verify(x => x.SearchAsync(
-            It.Is<SearchInput>(search =>
+        await repository.Received(1).SearchAsync(
+            Arg.Is<SearchInput>(search =>
                 search.Page == input.Page &&
                 search.PerPage == input.PerPage &&
                 search.Search == input.Search &&
                 search.Order == input.Order &&
                 search.OrderBy == input.OrderBy),
-            It.IsAny<CancellationToken>()),
-            Times.Once
-        );
+            Arg.Any<CancellationToken>());
     }
 }
