@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FC.Codeflix.Catalog.UnitTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FC.Codeflix.Catalog.Application", "src\FC.Codeflix.Catalog.Application\FC.Codeflix.Catalog.Application.csproj", "{6DD0138A-2735-4780-B92E-F25B4FDBF281}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FC.Codeflix.Catalog.IntegrationTests", "tests\FC.Codeflix.Catalog.IntegrationTests\FC.Codeflix.Catalog.IntegrationTests.csproj", "{ACD393B6-16D0-49D6-B930-88D9A80B9EEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FC.Codeflix.Catalog.Infra.Data.ES", "src\FC.Codeflix.Catalog.Infra.Data.ES\FC.Codeflix.Catalog.Infra.Data.ES.csproj", "{3F8C6B7E-1D2C-4723-8437-4812C86B57CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,10 +38,20 @@ Global
 		{6DD0138A-2735-4780-B92E-F25B4FDBF281}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DD0138A-2735-4780-B92E-F25B4FDBF281}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DD0138A-2735-4780-B92E-F25B4FDBF281}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACD393B6-16D0-49D6-B930-88D9A80B9EEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACD393B6-16D0-49D6-B930-88D9A80B9EEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACD393B6-16D0-49D6-B930-88D9A80B9EEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACD393B6-16D0-49D6-B930-88D9A80B9EEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F8C6B7E-1D2C-4723-8437-4812C86B57CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F8C6B7E-1D2C-4723-8437-4812C86B57CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F8C6B7E-1D2C-4723-8437-4812C86B57CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F8C6B7E-1D2C-4723-8437-4812C86B57CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1FE1F933-754E-4229-868A-D24B659663FE} = {7374DF35-EAF9-445F-B9AC-B1A8C96AA665}
 		{1E5D5A9C-F5FB-476A-A067-EBAE8F653F0A} = {A295CE9C-477F-455B-9A29-5BD595BB9050}
 		{6DD0138A-2735-4780-B92E-F25B4FDBF281} = {7374DF35-EAF9-445F-B9AC-B1A8C96AA665}
+		{ACD393B6-16D0-49D6-B930-88D9A80B9EEF} = {A295CE9C-477F-455B-9A29-5BD595BB9050}
+		{3F8C6B7E-1D2C-4723-8437-4812C86B57CF} = {7374DF35-EAF9-445F-B9AC-B1A8C96AA665}
 	EndGlobalSection
 EndGlobal

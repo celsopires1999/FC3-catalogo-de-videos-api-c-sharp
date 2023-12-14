@@ -1,7 +1,7 @@
 using FC.Codeflix.Catalog.Application.UseCases.Category.Common;
 using MediatR;
 
-namespace FC.Codeflix.Catalog.Application.UseCases.Category;
+namespace FC.Codeflix.Catalog.Application.UseCases.Category.SaveCategory;
 
 public class SaveCategoryInput
     : IRequest<CategoryModelOutput>

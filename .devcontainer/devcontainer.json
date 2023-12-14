@@ -7,12 +7,16 @@
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {},
 		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
-		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {}
+		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	},
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [5000, 5001],
+	"forwardPorts": [
+		9200,
+		9300
+	],
 	// "portsAttributes": {
 	//		"5001": {
 	//			"protocol": "https"
@@ -27,7 +31,8 @@
 				"vscode-icons-team.vscode-icons",
 				"kreativ-software.csharpextensions",
 				"fernandoescolar.vscode-solution-explorer",
-				"ms-dotnettools.csdevkit"
+				"ms-dotnettools.csdevkit",
+				"eamodio.gitlens"
 			]
 		}
 	}
