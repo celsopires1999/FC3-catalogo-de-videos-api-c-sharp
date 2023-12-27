@@ -366,5 +366,4 @@ FodyWeavers.xsd
 gcp_credentials.json
 
 # docker volumes
-.docker
-!.docker/es01/.gitkeep
+# .docker/es01/nodes

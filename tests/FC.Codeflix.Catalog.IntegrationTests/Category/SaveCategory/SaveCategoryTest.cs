@@ -16,9 +16,9 @@ public class SaveCategoryTest : IDisposable
         _fixture = fixture;
     }
 
-    [Fact(DisplayName = nameof(SaveCategory_WhenInputIsValid_PersitsCategory))]
+    [Fact(DisplayName = nameof(SaveCategory_WhenInputIsValid_PersistsCategory))]
     [Trait("Integration", "[UseCase] SaveCategory")]
-    public async Task SaveCategory_WhenInputIsValid_PersitsCategory()
+    public async Task SaveCategory_WhenInputIsValid_PersistsCategory()
     {
         var serviceProvider = _fixture.ServiceProvider;
         var mediator = serviceProvider.GetRequiredService<IMediator>();
