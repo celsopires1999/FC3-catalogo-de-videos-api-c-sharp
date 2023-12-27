@@ -26,7 +26,8 @@
                 "kreativ-software.csharpextensions",
                 "fernandoescolar.vscode-solution-explorer",
                 "ms-dotnettools.csdevkit",
-                "eamodio.gitlens"
+                "eamodio.gitlens",
+                "amazonwebservices.aws-toolkit-vscode"
             ]
         }
     }
